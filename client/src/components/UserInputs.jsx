@@ -20,22 +20,22 @@ const UserInputs = () => {
         <div className="row">
           <div className="col-lg-7 col-sm-6">
             <div className="row">
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-6 col-sm-12">
                 <div className="sub-header mt-3">Reservation Details</div>
                 <hr className="divider" />
                 <ReservationDetailsForm />
               </div>
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-6 col-sm-12">
                 <div className="sub-header mt-3">Customer Information</div>
                 <hr className="divider" />
                 <CustomerInformationForm />
               </div>
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-6 col-sm-12">
                 <div className="sub-header mt-3">Vehicle Information</div>
                 <hr className="divider" />
                 <VehicleInformationForm />
               </div>
-              <div className="col-lg-6 col-sm-6">
+              <div className="col-lg-6 col-sm-12">
                 <div className="sub-header mt-3">Additional Charges</div>
                 <hr className="divider" />
                 <AdditionalChargesForm />

@@ -4,7 +4,7 @@ const AdditionalChargesForm = () => {
   return (
     <form>
       <div className="row mb-3">
-        <div className="col-7">
+        <div className="col-8">
           <div className="form-check">
             <input
               className="form-check-input"
@@ -17,10 +17,10 @@ const AdditionalChargesForm = () => {
             </label>
           </div>
         </div>
-        <div className="col-5 text-end">$9.00</div>
+        <div className="col-4 text-end charge">$9.00</div>
       </div>
       <div className="row mb-3">
-        <div className="col-7">
+        <div className="col-8">
           <div className="form-check">
             <input
               className="form-check-input"
@@ -33,10 +33,10 @@ const AdditionalChargesForm = () => {
             </label>
           </div>
         </div>
-        <div className="col-5 text-end">$15.00</div>
+        <div className="col-4 text-end charge">$15.00</div>
       </div>
       <div className="row">
-        <div className="col-7">
+        <div className="col-8">
           <div className="form-check">
             <input
               className="form-check-input"
@@ -49,7 +49,7 @@ const AdditionalChargesForm = () => {
             </label>
           </div>
         </div>
-        <div className="col-5 text-end">11.5%</div>
+        <div className="col-4 text-end charge">11.5%</div>
       </div>
     </form>
   );

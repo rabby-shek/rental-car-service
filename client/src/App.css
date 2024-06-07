@@ -40,6 +40,29 @@ form {
   padding: 1.25rem;
   border-radius: 5px;
 }
+.form-label {
+  font-size: 14px;
+  font-weight: 300;
+  color: #1b1b1b;
+}
+.form-check-label,
+.charge,
+td {
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 400;
+}
+th {
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 600;
+}
+.required {
+  color: #ff1212;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .summery-container {
   border: 1px solid #5d5cff;
   padding: 1.25rem;

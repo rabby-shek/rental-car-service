@@ -1,8 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CarContext } from "../../contexts/CarProvider";
+import Required from "./Required";
 
 const VehicleInformationForm = () => {
-  const { data, setSelectedVehicleType, setSelectedVehicle } = useContext(CarContext);
+  const { data, setSelectedVehicleType, setSelectedVehicle } =
+    useContext(CarContext);
   const [selectedType, setSelectedType] = useState("");
   const [filteredVehicles, setFilteredVehicles] = useState([]);
 
@@ -27,7 +29,7 @@ const VehicleInformationForm = () => {
       <div>
         <div className="mb-3">
           <label htmlFor="vehicleType" className="form-label">
-            Vehicle Type
+            <Required value="Vehicle Type" />
           </label>
           <select
             className="form-select"
@@ -46,9 +48,13 @@ const VehicleInformationForm = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="vehicle" className="form-label">
-            Vehicle
+            <Required value="Vehicle" />
           </label>
-          <select className="form-select" aria-label="vehicle" onChange={(e) => setSelectedVehicle(e.target.value)}>
+          <select
+            className="form-select"
+            aria-label="vehicle"
+            onChange={(e) => setSelectedVehicle(e.target.value)}
+          >
             <option selected>Open this select menu</option>
             {/* Map over filtered vehicles */}
             {filteredVehicles.map((vehicle, index) => (
