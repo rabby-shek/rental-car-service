@@ -5,8 +5,16 @@ const CarContext = createContext();
 
 const CarProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  // reservation details
+  const [reservationID, setReservationID] = useState("");
+  const [pickupDate, setPickupDate] = useState("");
+  // vehicle information
   const [selectedVehicleType, setSelectedVehicleType] = useState("");
   const [selectedVehicle, setSelectedVehicle] = useState("");
+  // additional charges
+  const [damageWaiver, setDamageWaiver] = useState(false);
+  const [liabilityInsurance, setLiabilityInsurance] = useState(false);
+  const [rentalTax, setRentalTax] = useState(false);
   const fetchCarsData = async () => {
     try {
       const response = await axios.get(
@@ -30,6 +38,16 @@ const CarProvider = ({ children }) => {
         setSelectedVehicleType,
         selectedVehicle,
         setSelectedVehicle,
+        reservationID,
+        setReservationID,
+        pickupDate,
+        setPickupDate,
+        damageWaiver,
+        setDamageWaiver,
+        liabilityInsurance,
+        setLiabilityInsurance,
+        rentalTax,
+        setRentalTax
       }}
     >
       {children}

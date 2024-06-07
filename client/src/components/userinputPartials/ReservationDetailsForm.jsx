@@ -9,7 +9,7 @@ const ReservationDetailsForm = () => {
           <label htmlFor="reservationID" className="form-label">
           Reservation ID
           </label>
-          <input type="text" className="form-control" id="reservationID" />
+          <input type="text" className="form-control" readOnly id="reservationID" />
         </div>
         <div className="mb-3">
           <label htmlFor="pickupDate" className="form-label">
@@ -36,7 +36,7 @@ const ReservationDetailsForm = () => {
               type="text"
               className="form-control"
               id="duration"
-              placeholder="1 week a day"
+              placeholder="1 Week 1 Day"
             />
           </div>
         </div>

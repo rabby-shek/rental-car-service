@@ -8,11 +8,18 @@ const VehicleInformationForm = () => {
   const [selectedType, setSelectedType] = useState("");
   const [filteredVehicles, setFilteredVehicles] = useState([]);
 
-  // Filter vehicles based on selected type
+  // Extract unique vehicle types
+  const uniqueTypes = [...new Set(data.map((vehicle) => vehicle.type))];
+
   useEffect(() => {
     if (selectedType) {
       const filtered = data.filter((vehicle) => vehicle.type === selectedType);
       setFilteredVehicles(filtered);
+
+      // Set the selected vehicle to the first car in the filtered list
+      if (filtered.length > 0) {
+        setSelectedVehicle(filtered[0].make);
+      }
     } else {
       // If no type is selected, show all vehicles
       setFilteredVehicles([]);
@@ -37,11 +44,10 @@ const VehicleInformationForm = () => {
             onChange={handleTypeChange}
             value={selectedType}
           >
-            <option value="">Select Type</option>
-            {/* Assuming types are available in an array */}
-            {data.map((vehicle, index) => (
-              <option key={index} value={vehicle.type}>
-                {vehicle.type}
+            {/* Render unique vehicle types */}
+            {uniqueTypes.map((type, index) => (
+              <option key={index} value={type}>
+                {type}
               </option>
             ))}
           </select>
@@ -55,7 +61,6 @@ const VehicleInformationForm = () => {
             aria-label="vehicle"
             onChange={(e) => setSelectedVehicle(e.target.value)}
           >
-            <option selected>Open this select menu</option>
             {/* Map over filtered vehicles */}
             {filteredVehicles.map((vehicle, index) => (
               <option key={index} value={vehicle.make}>
