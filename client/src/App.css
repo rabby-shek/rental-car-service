@@ -1,0 +1,48 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 3rem 1rem;
+  background-color: rgb(179, 179, 179);
+}
+.user-inputs {
+  width: 81.938rem;
+  height: 100%;
+  background-color: #fff;
+  padding: 2rem;
+  font-family: var(--user-input-font-family);
+}
+.reservation {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.print-btn {
+  width: 10.938rem;
+  height: 3rem;
+  background: #5d5cff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.sub-header {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+hr {
+  color: #5d5cff;
+}
+form {
+  border: 1px solid #dfdfff;
+  padding: 1.25rem;
+  border-radius: 5px;
+}
+.summery-container {
+  border: 1px solid #5d5cff;
+  padding: 1.25rem;
+  border-radius: 5px;
+  background-color: #dfdfff;
+}
