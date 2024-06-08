@@ -1,5 +1,8 @@
 # Car Rental Service
-
+## version
+1. node (18.17.1)
+2. npm (10.2.5)
+### setup
 1. setup MERN environment
 2. clone the project
 3. go to client folder
