@@ -5,9 +5,13 @@ const CarContext = createContext();
 
 const CarProvider = ({ children }) => {
   const [data, setData] = useState([]);
+  const [validation, setValidation] = useState(false);
   // reservation details
   const [reservationID, setReservationID] = useState("");
   const [pickupDate, setPickupDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [duration, setDuration] = useState(0);
+  const [discount, setDiscount] = useState(0);
   // vehicle information
   const [selectedVehicleType, setSelectedVehicleType] = useState("");
   const [selectedVehicle, setSelectedVehicle] = useState("");
@@ -61,7 +65,15 @@ const CarProvider = ({ children }) => {
         customerEmail,
         setCustomerEmail,
         customerPhone,
-        setCustomerPhone
+        setCustomerPhone,
+        returnDate,
+        setReturnDate,
+        duration,
+        setDuration,
+        discount,
+        setDiscount,
+        validation,
+        setValidation
       }}
     >
       {children}

@@ -6,18 +6,27 @@ import AdditionalChargesForm from "./userinputPartials/AdditionalChargesForm";
 import ChangesSummery from "./userinputPartials/ChangesSummery";
 import { useReactToPrint } from 'react-to-print';
 import Invoice from "./Invoice";
+import { CarContext } from "../contexts/CarProvider";
 const UserInputs = () => {
   const componentRef = useRef();
+  const {validation} = useContext(CarContext);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+  const handlePrintClick = () => {
+    if (validation) {
+      handlePrint();
+    } else {
+      alert("Add correct data");
+    }
+  };
   return (
     <div className="user-inputs">
       <div className="user-input-header">
         <div className="row g-2">
           <div className="col-lg-6 col-sm-6 reservation">Reservation</div>
           <div className="col-lg-6 col-sm-6 text-lg-end ">
-            <button className="print-btn" onClick={handlePrint}>Print/Download</button>
+            <button className="print-btn" onClick={handlePrintClick}>Print/Download</button>
           </div>
         </div>
       </div>

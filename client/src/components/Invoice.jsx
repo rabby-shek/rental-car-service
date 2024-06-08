@@ -3,7 +3,7 @@ import ChangesSummery from "./userinputPartials/ChangesSummery";
 import BrandLogo from "../assets/images/logo.jpeg";
 import { CarContext } from "../contexts/CarProvider";
 const Invoice = forwardRef((props, ref) => {
-  const { customerFirstName, customerLastName, customerEmail, customerPhone } =
+  const { customerFirstName, customerLastName, customerEmail, customerPhone, reservationID, pickupDate, returnDate } =
     useContext(CarContext);
   return (
     <div className="hidden" ref={ref}>
@@ -12,8 +12,9 @@ const Invoice = forwardRef((props, ref) => {
           <div className="row">
             <div className="col-5">
               <img className="w-75 " src={BrandLogo} alt="Brand Logo" />
-              <div className="fw-bold text-uppercase mt-3">Renter Info</div>
+              
               <div className="renters-data">
+              <div className="fw-bold text-uppercase mt-3">Renter Info</div>
                 <div className="name">
                   {customerFirstName} {customerLastName}
                 </div>
@@ -42,14 +43,13 @@ const Invoice = forwardRef((props, ref) => {
                   <li>Rental Tax</li>
                 </ul>
               </div>
-              <div>
+              <div className="mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Doloribus cupiditate quod dolorum sapiente excepturi, dolor
                 consequatur architecto sed, nihil ipsum omnis fuga expedita
                 animi sequi! Repellendus minima itaque incidunt perspiciatis!
               </div>
-            </div>
-            <div className="fw-bold text-uppercase mt-3">Opening Days</div>
+              <div className="fw-bold text-uppercase mt-3">Opening Days</div>
             <div>
               <ul className="opening">
                 <li>Monday 9.00 Am - 6.00 PM</li>
@@ -61,15 +61,17 @@ const Invoice = forwardRef((props, ref) => {
                 <li>Sunday 9.00 Am - 6.00 PM</li>
               </ul>
             </div>
+            </div>
+            
           </div>
         </div>
         <div className="col-6">
           <h3 className="fw-bold">Reservation</h3>
-          <h4 className="fw-bold">RA#0121</h4>
+          <h4 className="fw-bold">{reservationID}</h4>
           <div>Repaid Order:</div>
           <div>CLAIM:</div>
-          <div>Data/Time Out: 03/29/2024 12:33AM</div>
-          <div>Data/Time In: 03/29/2024 12:33AM</div>
+          <div>Data/Time Out: {returnDate} </div>
+          <div className="mb-3">Data/Time In: {pickupDate}</div>
           <ChangesSummery />
           <div className="text-justify mt-3 mb-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
