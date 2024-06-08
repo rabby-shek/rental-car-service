@@ -8,6 +8,17 @@
 3. go to client folder
 4. install dependencies using npm install
 5. start the server using npm start
+### Features completed
+1. Ui for the user.
+2. Printing system,
+3. invoice design.
+4. calculation.
+5. live summery changes
+### Incomplete
+1. Some validations
+2. Backend integration
+3. documentation
+4. code review and testing
 
 Note : The time and the project is not equal.
 The project is not fully completed.
