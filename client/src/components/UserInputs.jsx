@@ -1,21 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import ReservationDetailsForm from "./userinputPartials/ReservationDetailsForm";
 import CustomerInformationForm from "./userinputPartials/CustomerInformationForm";
 import VehicleInformationForm from "./userinputPartials/VehicleInformationForm";
 import AdditionalChargesForm from "./userinputPartials/AdditionalChargesForm";
 import ChangesSummery from "./userinputPartials/ChangesSummery";
-
+import { useReactToPrint } from 'react-to-print';
+import Invoice from "./Invoice";
 const UserInputs = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   return (
     <div className="user-inputs">
       <div className="user-input-header">
         <div className="row g-2">
           <div className="col-lg-6 col-sm-6 reservation">Reservation</div>
           <div className="col-lg-6 col-sm-6 text-lg-end ">
-            <button className="print-btn">Print/Download</button>
+            <button className="print-btn" onClick={handlePrint}>Print/Download</button>
           </div>
         </div>
       </div>
+      <Invoice ref={componentRef} />
       <div className="user-input-form-container">
         <div className="row">
           <div className="col-lg-7 col-sm-6">

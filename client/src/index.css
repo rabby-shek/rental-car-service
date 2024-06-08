@@ -9,3 +9,6 @@
 }
 
 /* utility classes */
+.text-justify{
+  text-align: justify;
+}
