@@ -80,7 +80,44 @@ th {
 }
 
 @media print {
+  /* Apply styles specifically for printing */
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  /* Hide elements not relevant for printing */
   .hidden {
     display: block;
   }
+
+  /* Adjust margins for printing */
+  .row {
+    margin-bottom: 5mm; /* Adjust as needed */
+  }
+
+  /* Adjust font sizes, colors, etc. */
+  .fw-bold {
+    font-weight: bold;
+  }
+
+  .renters-data {
+    margin-top: 10px;
+  }
+
+  .opening {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Adjust image size */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* Add any additional print-specific styles here */
 }
+

@@ -1,7 +1,10 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useContext } from "react";
 import ChangesSummery from "./userinputPartials/ChangesSummery";
 import BrandLogo from "../assets/images/logo.jpeg";
+import { CarContext } from "../contexts/CarProvider";
 const Invoice = forwardRef((props, ref) => {
+  const { customerFirstName, customerLastName, customerEmail, customerPhone } =
+    useContext(CarContext);
   return (
     <div className="hidden" ref={ref}>
       <div className="row p-5">
@@ -11,9 +14,11 @@ const Invoice = forwardRef((props, ref) => {
               <img className="w-75 " src={BrandLogo} alt="Brand Logo" />
               <div className="fw-bold text-uppercase mt-3">Renter Info</div>
               <div className="renters-data">
-                <div className="name">Shihab Ahmed</div>
-                <div>test@gmail.com</div>
-                <div>PH:012434343</div>
+                <div className="name">
+                  {customerFirstName} {customerLastName}
+                </div>
+                <div className="email">{customerEmail}</div>
+                <div>PH:{customerPhone}</div>
               </div>
             </div>
             <div className="col-7">
@@ -21,28 +26,40 @@ const Invoice = forwardRef((props, ref) => {
               <div>162 Barzen st</div>
               <div>Brooklyn, NY 12334</div>
               <div className="mb-3">PH#</div>
-              <ul className="opening">
-              <li>Monday 9.00 Am - 6.00 PM</li>
-              <li>Tuesday 9.00 Am - 6.00 PM</li>
-              <li>Wednesday 9.00 Am - 6.00 PM</li>
-              <li>Thursday 9.00 Am - 6.00 PM</li>
-              <li>Friday 9.00 Am - 6.00 PM</li>
-              <li>Saturday 9.00 Am - 6.00 PM</li>
-              <li>Sunday 9.00 Am - 6.00 PM</li>
-              </ul>
             </div>
             <div className="row">
-            <div className="fw-bold text-uppercase mt-3">Unit Details</div>
-            <div>Unit : Nissan rouge black</div>
-            <div>Make and Model : Nissan rouge black</div>
-            <div className="fw-bold text-uppercase mt-3">Bill Information</div>
-            <div className="fw-bold">Additional Charges</div>
-            <ul>
-              <li>Collision Damage Waiver</li>
-              <li>Liability Insurance</li>
-              <li>Rental Tax</li>
-            </ul>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus cupiditate quod dolorum sapiente excepturi, dolor consequatur architecto sed, nihil ipsum omnis fuga expedita animi sequi! Repellendus minima itaque incidunt perspiciatis!</div>
+              <div className="fw-bold text-uppercase mt-3">Unit Details</div>
+              <div>Unit : Nissan rouge black</div>
+              <div>Make and Model : Nissan rouge black</div>
+              <div className="fw-bold text-uppercase mt-3">
+                Bill Information
+              </div>
+              <div className="fw-bold">Additional Charges</div>
+              <div>
+                <ul className="opening">
+                  <li>Collision Damage Waiver</li>
+                  <li>Liability Insurance</li>
+                  <li>Rental Tax</li>
+                </ul>
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus cupiditate quod dolorum sapiente excepturi, dolor
+                consequatur architecto sed, nihil ipsum omnis fuga expedita
+                animi sequi! Repellendus minima itaque incidunt perspiciatis!
+              </div>
+            </div>
+            <div className="fw-bold text-uppercase mt-3">Opening Days</div>
+            <div>
+              <ul className="opening">
+                <li>Monday 9.00 Am - 6.00 PM</li>
+                <li>Tuesday 9.00 Am - 6.00 PM</li>
+                <li>Wednesday 9.00 Am - 6.00 PM</li>
+                <li>Thursday 9.00 Am - 6.00 PM</li>
+                <li>Friday 9.00 Am - 6.00 PM</li>
+                <li>Saturday 9.00 Am - 6.00 PM</li>
+                <li>Sunday 9.00 Am - 6.00 PM</li>
+              </ul>
             </div>
           </div>
         </div>

@@ -15,6 +15,12 @@ const CarProvider = ({ children }) => {
   const [damageWaiver, setDamageWaiver] = useState(false);
   const [liabilityInsurance, setLiabilityInsurance] = useState(false);
   const [rentalTax, setRentalTax] = useState(false);
+  // customer information
+  const [customerFirstName, setCustomerFirstName] = useState("");
+  const [customerLastName, setCustomerLastName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
+
   const fetchCarsData = async () => {
     try {
       const response = await axios.get(
@@ -47,7 +53,15 @@ const CarProvider = ({ children }) => {
         liabilityInsurance,
         setLiabilityInsurance,
         rentalTax,
-        setRentalTax
+        setRentalTax,
+        customerFirstName,
+        setCustomerFirstName,
+        customerLastName,
+        setCustomerLastName,
+        customerEmail,
+        setCustomerEmail,
+        customerPhone,
+        setCustomerPhone
       }}
     >
       {children}
